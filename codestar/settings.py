@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+# run server:                                   python manage.py runserver
+# command to list pips to requirements.txt:     pip3 freeze --local > requirements.txt
+# migration commands:                           python manage.py makemigrations
+#                                               python manage.py migrate
 from pathlib import Path
 import os
 import dj_database_url
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'codestar.urls'
