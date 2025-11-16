@@ -10,10 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+#-------------------------------Commands--------------------------------------
 # run server:                                   python manage.py runserver
 # command to list pips to requirements.txt:     pip3 freeze --local > requirements.txt
 # migration commands:                           python manage.py makemigrations
 #                                               python manage.py migrate
+# collect all static files                      python manage.py collectstatic
+
 from pathlib import Path
 import os
 import dj_database_url
