@@ -4,7 +4,10 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
-
+    """
+    Lists fields for display in admin, fields for search,
+    field filters, fields to prepopulate and rich-text editor.
+    """
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
     list_filter = ['status', 'created_on']
@@ -15,5 +18,9 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(SummernoteModelAdmin):
+    """
+    Lists fields for display in admin and
+    field filters
+    """
     list_display = ( 'body','post','created_on', 'approved')
     list_filter = ['approved']
